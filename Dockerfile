@@ -1,6 +1,9 @@
 # parent image
 FROM node:latest
 
+# install nodemon
+RUN npm install -g nodemon
+
 # set work dir
 WORKDIR /app
 
@@ -17,7 +20,7 @@ COPY . .
 EXPOSE 4000
 
 # run in container
-CMD [ "node", "app.js" ]
+CMD [ "npm", "run", "dev"]
 
 
 
